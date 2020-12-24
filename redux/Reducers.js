@@ -1,9 +1,8 @@
-import { SEARCH_MOVIES, ADD_INPUT, FETCH_MOVIE, GET_ID } from './types'
+import { SEARCH_MOVIES, ADD_INPUT, GET_MOVIE } from './Types'
 
 const initialState = {
     movies: [],
     input: '',
-    id: '',
     movie: []
 }
 
@@ -13,10 +12,8 @@ export default function reducers(state = initialState, action) {
             return { ...state, movies: action.payload }
         case ADD_INPUT:
             return { ...state, input: action.payload }
-        case FETCH_MOVIE:
+        case GET_MOVIE:
             return { ...state, movie: action.payload }
-        case GET_ID:
-            return { ...state, id: action.payload }
         default:
             return state
     };

@@ -1,4 +1,4 @@
-import { SEARCH_MOVIES, ADD_INPUT, FETCH_MOVIE, GET_ID } from './types'
+import { SEARCH_MOVIES, ADD_INPUT, GET_MOVIE } from './Types'
 
 export const setMovieSearch = (value) => {
     return {
@@ -14,9 +14,9 @@ export const setSearchInput = (value) => {
     }
 }
 
-export const fetchMovieData = (value) => {
+export const setMovieData = (value) => {
     return {
-        type: FETCH_MOVIE,
+        type: GET_MOVIE,
         payload: value
     }
 }
@@ -29,18 +29,18 @@ export const searchMovieByName = (input) => {
     return function (dispatch) {
         fetch(`https://www.omdbapi.com/?s=${input}&apikey=${apiKey}`)
             .then(res => res.json())
-            .then((results) => { dispatch(setMovieSearch(results)); console.log(results) })
+            .then((results) => { dispatch(setMovieSearch(results)); /* console.log(results) */ })
             .catch((error) => {
                 console.log(error.message)
             })
     }
 }
 
-export const searchMovieByID = (movieId) => {
+export const searchMovieByID = (imdbId) => {
     return function (dispatch) {
-        fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`)
+        fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${apiKey}`)
             .then(res => res.json())
-            .then((results) => { dispatch(fetchMovieData(results)); console.log(results) })
+            .then((results) => { dispatch(setMovieData(results)); /* console.log(results) */ })
             .catch((error) => {
                 console.log(error.message)
             })

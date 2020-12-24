@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function MovieCard({ moviesData, imdbId }) {
 
     return (
-        <Link href={'/}>
+        <Link href={imdbId}>
             <div className='movie-card'>
                 <span>{moviesData.Year}</span>
                 <h2>{moviesData.Title}</h2>
