@@ -25,9 +25,9 @@ export const setMovieData = (value) => {
 
 const apiKey = process.env.NEXT_PUBLIC_OMDB_KEY
 
-export const searchMovieByName = (input) => {
+export const searchMovieByName = (param) => {
     return function (dispatch) {
-        fetch(`https://www.omdbapi.com/?s=${input}&apikey=${apiKey}`)
+        fetch(`https://www.omdbapi.com/?s=${param}&apikey=${apiKey}`)
             .then(res => res.json())
             .then((results) => { dispatch(setMovieSearch(results)); /* console.log(results) */ })
             .catch((error) => {
@@ -36,9 +36,9 @@ export const searchMovieByName = (input) => {
     }
 }
 
-export const searchMovieByID = (imdbId) => {
+export const searchMovieByID = (param) => {
     return function (dispatch) {
-        fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${apiKey}`)
+        fetch(`https://www.omdbapi.com/?i=${param}&apikey=${apiKey}`)
             .then(res => res.json())
             .then((results) => { dispatch(setMovieData(results)); /* console.log(results) */ })
             .catch((error) => {

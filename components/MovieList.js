@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function MovieCard({ moviesData, imdbId }) {
+export default function MovieList({ moviesData, imdbId }) {
 
     return (
         <Link href={imdbId}>

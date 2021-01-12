@@ -1,4 +1,4 @@
-import '../styles/MovieCard.sass'
+import '../styles/MovieList.sass'
 import '../styles/results.sass'
 import '../styles/MovieDetails.sass'
 import { Provider } from 'react-redux'

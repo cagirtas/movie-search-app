@@ -1,17 +1,18 @@
-import Head from 'next/head'
 import Header from '../components/Header'
-import MovieCard from '../components/MovieCard'
+import MovieList from '../components/MovieList'
 import { useSelector } from 'react-redux'
 
 export default function SearchResults() {
 
-    const movieName = useSelector(state => state.globalStateMovies.input)
+    const movieName = useSelector(state => state.globalStateMovies.movieSearch)
     const searchedMovie = useSelector(state => state.globalStateMovies.movies)
     const content = searchedMovie.Response === 'True'
         ? searchedMovie.Search.map((values, index) => (
-            <MovieCard key={index} moviesData={values} imdbId={values.imdbID} />
+            <MovieList key={index} moviesData={values} imdbId={values.imdbID} />
         ))
         : null;
+
+    console.log(content)
 
     return (
         <>
