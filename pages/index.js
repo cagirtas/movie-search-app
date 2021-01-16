@@ -17,10 +17,10 @@ export default function Home() {
                 <img src='/people-with-popcorn-watching-movie-in-cinema.jpg' />
             </div>
             <SearchBox />
-            <div className='showcase-header'>
+{/*             <div className='showcase-header'>
                 <h1>Popular Movies</h1>
                 <a href=''>view more</a>
-            </div>
+            </div> */}
             {/*             <MovieDetails /> */}
         </>
     )
