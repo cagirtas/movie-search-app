@@ -15,8 +15,8 @@ function SearchBox() {
         router.push('/results')
     }
 
-    function handleKeyDown(e) {
-        if (e.key === 'Enter')
+    function handleKeyDown(event) {
+        if (event.key === 'Enter')
             performSearch()
     }
     const handleChange = (event) => {
