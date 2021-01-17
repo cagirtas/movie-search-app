@@ -12,8 +12,6 @@ export default function SearchResults() {
         ))
         : null;
 
-    console.log(content)
-
     return (
         <>
             <Header />
