@@ -4,13 +4,12 @@ import MovieList from '../components/MovieList'
 
 export default function Favorites() {
 
-    const isNode = typeof module !== 'undefined'
+    useEffect(()=>{
+        typeof window !== undefined ? localStorage.getItem('Movies') : null
+    })
+
     const storedMovies = JSON.parse(localStorage.getItem('Movies'))
 
-    if(!isNode){
-        //use the local storage
-        storedMoviest
-     }
 
     const favoriteList = storedMovies ?
         storedMovies.map((values, index) => (
