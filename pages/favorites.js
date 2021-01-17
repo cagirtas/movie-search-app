@@ -11,8 +11,6 @@ export default function Favorites() {
             <MovieList key={index} moviesData={values} imdbId={values.imdbID} />
         )) : "No Favorites Found"
 
-    console.log(favoriteList)
-
     return (
         <>
             <Header />
