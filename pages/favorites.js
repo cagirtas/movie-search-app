@@ -6,6 +6,13 @@ export default function Favorites() {
 
     const storedMovies = JSON.parse(localStorage.getItem('Movies'))
 
+    useEffect(() => {
+        storedMovies == null ?
+            localStorage.setItem('Movies', JSON.stringify([]))
+            :
+            storedMovies
+    })
+
     const favoriteList = storedMovies ?
         storedMovies.map((values, index) => (
             <MovieList key={index} moviesData={values} imdbId={values.imdbID} />
