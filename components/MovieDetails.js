@@ -7,6 +7,7 @@ export default function MovieDetails({ movieData }) {
     const [buttonName, setButtonName] = useState('')
 
     useEffect(()=>{
+        typeof window !== undefined ? localStorage.getItem('Movies') : null
         isFavorite ? setButtonName('Remove Favorite') : setButtonName('Add Favorite')
     })
 
