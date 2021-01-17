@@ -6,10 +6,6 @@ import {useEffect} from 'react'
 
 export default function Home() {
    
-    useEffect(() => {
-        const storedMovies = localStorage.getItem('Movies')
-     storedMovies == null ? localStorage.setItem('Movies', JSON.stringify([])) : storedMovies
-    },[])
 
     return (
         <>

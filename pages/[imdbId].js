@@ -12,7 +12,6 @@ export default function MoviePage() {
     const { imdbId } = router.query
 
     useEffect(() => {
-        typeof window !== undefined ? localStorage.getItem('Movies') : null
         dispatch(searchMovieByID(imdbId))
     })
 
