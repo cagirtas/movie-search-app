@@ -13,7 +13,7 @@ export default function MoviePage() {
 
     useEffect(() => {
         dispatch(searchMovieByID(imdbId))
-    }, [])
+    })
 
     const movieData = useSelector(state => state.globalStateMovies.movie)
 

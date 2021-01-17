@@ -2,8 +2,15 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import SearchBox from '../components/SearchBox'
 import MovieDetails from '../components/MovieDetails'
+import {useEffect} from 'react'
 
 export default function Home() {
+   
+    useEffect(() => {
+        const storedMovies = localStorage.getItem('Movies')
+     storedMovies == null ? localStorage.setItem('Movies', JSON.stringify([])) : storedMovies
+    },[])
+
     return (
         <>
             <Head>

@@ -2,18 +2,9 @@ import { useEffect, useState } from "react"
 
 export default function MovieDetails({ movieData }) {
 
-    const storedMovies = localStorage.getItem('Movies')
-    const movieArray = JSON.parse(storedMovies)
+    const movieArray = JSON.parse(localStorage.getItem('Movies'))
     const isFavorite = movieArray.some(movie=>movie.imdbID == movieData.imdbID)
-
     const [buttonName, setButtonName] = useState('')
-
-    useEffect(() => {
-        storedMovies == null ? 
-            localStorage.setItem('Movies', JSON.stringify([]))
-        :
-        storedMovies
-    })
 
     useEffect(()=>{
         isFavorite ? setButtonName('Remove Favorite') : setButtonName('Add Favorite')
