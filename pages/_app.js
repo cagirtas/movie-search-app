@@ -6,6 +6,12 @@ import store from '../redux/store'
 
 export default function App({ Component, pageProps }) {
 
+  const ISSERVER = typeof window === "undefined";
+
+  if (!ISSERVER) {
+    localStorage.getItem('Movies', JSON.stringify([]))
+  }
+
   return (
     <Provider store={store}>
       <Component {...pageProps} />
