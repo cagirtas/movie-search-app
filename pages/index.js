@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import SearchBox from '../components/SearchBox'
 import MovieDetails from '../components/MovieDetails'
+import { useEffect } from 'react'
 
 export default function Home() {
+
     return (
         <>
             <Head>
@@ -17,11 +19,6 @@ export default function Home() {
                 <img src='/people-with-popcorn-watching-movie-in-cinema.jpg' />
             </div>
             <SearchBox />
-{/*             <div className='showcase-header'>
-                <h1>Popular Movies</h1>
-                <a href=''>view more</a>
-            </div> */}
-            {/*             <MovieDetails /> */}
         </>
     )
 }

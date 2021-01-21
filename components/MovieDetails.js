@@ -2,35 +2,26 @@ import { useEffect, useState } from "react"
 
 export default function MovieDetails({ movieData }) {
 
-    const storedMovies = localStorage.getItem('Movies')
-    const movieArray = JSON.parse(storedMovies)
-    const isFavorite = movieArray.some(movie=>movie.imdbID == movieData.imdbID)
-
+    const movieArray = JSON.parse(localStorage.getItem('Movies'))
+    const isFavorite = movieArray.some(movie => movie.imdbID == movieData.imdbID)
     const [buttonName, setButtonName] = useState('')
 
     useEffect(() => {
-        storedMovies == null ? 
-            localStorage.setItem('Movies', JSON.stringify([]))
-        :
-        storedMovies
-    })
-
-    useEffect(()=>{
         isFavorite ? setButtonName('Remove Favorite') : setButtonName('Add Favorite')
     })
 
     const controlFavorites = () => {
-        const filteredArray = movieArray.filter(movie=>movie.imdbID !== movieData.imdbID)
-        if(!isFavorite){
+        const filteredArray = movieArray.filter(movie => movie.imdbID !== movieData.imdbID)
+        if (!isFavorite) {
             localStorage.setItem('Movies', JSON.stringify([...movieArray, movieData]))
             setButtonName('Remove Favorites')
         }
-        else{
+        else {
             localStorage.setItem('Movies', JSON.stringify(filteredArray))
             setButtonName('Add Favorites')
         }
     }
-    
+
     return (
         <div className='carousel'>
             <div className="movie-details">

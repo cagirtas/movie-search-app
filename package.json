@@ -1,15 +1,11 @@
 {
   "name": "movie-search-app",
   "version": "0.1.0",
-  "engines": {
-    "node": "15.0.1"
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "build": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
